@@ -12,10 +12,10 @@ class IncompleteTaskView extends StatelessWidget {
       onViewModelReady: (viewModel) async {
         bool isSuccess = await viewModel.getTasks();
 
-        print('Complete Task View load is $isSuccess');
+        print('Incomplete Task View load is $isSuccess');
       },
       builder: (context, viewModel, _) => Scaffold(
-        appBar: SharedAppBar(title: 'Completed Tasks'),
+        appBar: SharedAppBar(title: 'Incomplete Tasks'),
         body: Container(
           margin: EdgeInsets.all(10),
           decoration: sharedBoxDecoration,
