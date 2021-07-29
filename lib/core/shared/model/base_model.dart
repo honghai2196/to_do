@@ -3,5 +3,6 @@ abstract class BaseModel {
 
   handleError(dynamic error) {
     this.message = error.toString();
+    print(this.message);
   }
 }
