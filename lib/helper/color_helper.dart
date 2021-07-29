@@ -1,3 +1,0 @@
-class ColorHelper {
-  ColorHelper._();
-}
