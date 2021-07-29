@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do/view/home/home_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'To Do sample',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: Container(),
+      home: HomeView(),
     );
   }
 }
