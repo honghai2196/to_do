@@ -7,6 +7,26 @@ class CompleteTaskModel extends BaseModel {
   Future<bool> getTasks() async {
     message = "";
     try {
+      tasks = MockTask.mockTasks
+          .where((element) => element.status == true)
+          .toList();
+      tasks.sort((a, b) => a.id <= b.id ? 0 : 1);
+      return true;
+    } catch (error) {
+      handleError(error);
+      return false;
+    }
+  }
+
+  Future<bool> changeStatus(int id, bool status) async {
+    message = "";
+    try {
+      MockTask.mockTasks.where((element) => element.id == id).first.status =
+          status;
+      tasks = MockTask.mockTasks
+          .where((element) => element.status == true)
+          .toList();
+      tasks.sort((a, b) => a.id <= b.id ? 0 : 1);
       return true;
     } catch (error) {
       handleError(error);
