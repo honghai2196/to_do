@@ -6,9 +6,9 @@ import 'package:to_do/core/shared/view_model/base_view_model.dart';
 class BaseView<T extends BaseViewModel> extends StatefulWidget {
   final Widget Function(BuildContext context, T viewModel, Widget? child)
       builder;
-  final Function(T) onViewModelReady;
+  final Function(T)? onViewModelReady;
 
-  BaseView(this.builder, this.onViewModelReady);
+  BaseView({required this.builder, this.onViewModelReady});
 
   @override
   _BaseViewState<T> createState() => _BaseViewState<T>();
@@ -19,7 +19,9 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
 
   @override
   void initState() {
-    widget.onViewModelReady(viewModel);
+    if (widget.onViewModelReady != null) {
+      widget.onViewModelReady!(viewModel);
+    }
     super.initState();
   }
 
