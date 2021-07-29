@@ -15,7 +15,6 @@ class CompleteTaskView extends StatelessWidget {
         print('Complete Task View load is $isSuccess');
       },
       builder: (context, viewModel, _) => Scaffold(
-        backgroundColor: Colors.white,
         appBar: SharedAppBar(title: 'Completed Tasks'),
         body: Container(
           margin: EdgeInsets.all(10),

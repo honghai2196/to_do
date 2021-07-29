@@ -15,13 +15,11 @@ class IncompleteTaskView extends StatelessWidget {
         print('Complete Task View load is $isSuccess');
       },
       builder: (context, viewModel, _) => Scaffold(
-        backgroundColor: Colors.white,
         appBar: SharedAppBar(title: 'Completed Tasks'),
         body: Container(
           margin: EdgeInsets.all(10),
           decoration: sharedBoxDecoration,
           child: ListView.separated(
-            shrinkWrap: true,
             separatorBuilder: (_, __) => UIHelper.divider(),
             itemCount: viewModel.getTaskItems().length,
             itemBuilder: (context, index) {

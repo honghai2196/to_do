@@ -15,7 +15,6 @@ class AllTaskView extends StatelessWidget {
         print('All Task View load is $isSuccess');
       },
       builder: (context, viewModel, _) => Scaffold(
-        backgroundColor: Colors.white,
         appBar: SharedAppBar(title: 'All Tasks'),
         body: Container(
           margin: EdgeInsets.all(10),
